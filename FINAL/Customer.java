@@ -35,7 +35,7 @@ public class Customer {
                     viewAccountDetails();
                     break;
                 case 5:
-                    return; // Logout
+                    return; 
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
