@@ -17,19 +17,16 @@ public class Main {
 
             switch (userTypeChoice) {
                 case 1:
-                    // Customer login options
                     Customer customer = new Customer(manager, scanner);
                     customer.handleCustomerOperations();
                     break;
 
                 case 2:
-                    // Admin login options
                     Admin admin = new Admin(manager, scanner);
                     admin.handleAdminOperations();
                     break;
 
                 case 3:
-                    // Exit Program
                     System.out.println("Exiting... Goodbye!");
                     scanner.close();
                     return;
@@ -38,11 +35,10 @@ public class Main {
                     System.out.println("Invalid choice. Please try again.");
             }
 
-            System.out.println(); // Add a newline for better formatting
+            System.out.println(); 
         }
     }
 
-    // Generate a unique 9-character alphanumeric account number
     public static String generateUniqueAccountNumber() {
         StringBuilder accountNumber = new StringBuilder();
         Random random = new Random();
@@ -61,7 +57,7 @@ public class Main {
                 return scanner.nextInt();
             } else {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.next(); // Consume the invalid input
+                scanner.next();
             }
         }
     }
