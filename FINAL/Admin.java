@@ -52,7 +52,7 @@ public class Admin {
                     deleteAccount();
                     break;
                 case 9:
-                    return; // Logout
+                    return; 
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -162,7 +162,7 @@ public class Admin {
                 return scanner.nextInt();
             } else {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.next(); // Consume the invalid input
+                scanner.next(); 
             }
         }
     }
@@ -173,7 +173,7 @@ public class Admin {
                 return scanner.nextDouble();
             } else {
                 System.out.println(errorMessage);
-                scanner.next(); // Consume the invalid input
+                scanner.next();
             }
         }
     }
