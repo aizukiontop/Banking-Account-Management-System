@@ -43,17 +43,17 @@ public class Customer {
     }
 
     private void viewAccountDetails() {
-        String accountNumber = getValidAccountNumber(); // Get a valid account number
+        String accountNumber = getValidAccountNumber(); 
         BankAccount account = manager.getAccountDetails(accountNumber);
         if (account != null) {
-            account.showAccountDetails(); // Show the details of the account
+            account.showAccountDetails(); 
         } else {
-            System.out.println("Account not found."); // This should not trigger if getValidAccountNumber is working
+            System.out.println("Account not found."); 
         }
     }
 
     private void performDeposit() {
-        String accountNumber = getValidAccountNumber(); // Get a valid account number
+        String accountNumber = getValidAccountNumber(); 
         System.out.print("Enter Amount to Deposit: ");
         double amount = getValidDoubleInput("Please enter a valid amount.");
         manager.updateAccountBalance(accountNumber, amount);
@@ -61,7 +61,7 @@ public class Customer {
     }
 
     private void performWithdrawal() {
-        String accountNumber = getValidAccountNumber(); // Get a valid account number
+        String accountNumber = getValidAccountNumber(); 
         System.out.print("Enter Amount to Withdraw: ");
         double amount = getValidDoubleInput("Please enter a valid amount.");
         manager.updateAccountBalance(accountNumber, -amount);
@@ -69,8 +69,8 @@ public class Customer {
     }
 
     private void performTransfer() {
-        String senderAccountNumber = getValidAccountNumber(); // Get sender account number
-        String receiverAccountNumber = getValidAccountNumber(); // Get receiver account number
+        String senderAccountNumber = getValidAccountNumber(); 
+        String receiverAccountNumber = getValidAccountNumber(); 
         System.out.print("Enter Amount to Transfer: ");
         double amount = getValidDoubleInput("Please enter a valid amount.");
         manager.transferMoney(senderAccountNumber, receiverAccountNumber, amount);
@@ -82,10 +82,9 @@ public class Customer {
             System.out.print("Enter Account Number: ");
             String accountNumber = scanner.next();
             if (isValidAccountNumber(accountNumber)) {
-                // Check if the account exists
                 BankAccount account = manager.getAccountDetails(accountNumber);
                 if (account != null) {
-                    return accountNumber; // Valid account number
+                    return accountNumber; 
                 } else {
                     System.out.println("Account not found. Please enter a valid account number.");
                 }
@@ -96,7 +95,7 @@ public class Customer {
     }
 
     private boolean isValidAccountNumber(String accountNumber) {
-        return accountNumber.length() == 9; // Validate length
+        return accountNumber.length() == 9; 
     }
 
     private int getValidIntegerInput() {
@@ -105,7 +104,7 @@ public class Customer {
                 return scanner.nextInt();
             } else {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.next(); // Consume the invalid input
+                scanner.next(); 
             }
         }
     }
@@ -116,7 +115,7 @@ public class Customer {
                 return scanner.nextDouble();
             } else {
                 System.out.println(errorMessage);
-                scanner.next(); // Consume the invalid input
+                scanner.next(); 
             }
         }
     }
