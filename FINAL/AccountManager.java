@@ -58,7 +58,6 @@ public class AccountManager {
         return filteredAccounts;
     }
 
-    // New method to filter by account type
     public List<BankAccount> filterByAccountType(Class<? extends BankAccount> type) {
         List<BankAccount> filteredAccounts = new ArrayList<>();
         for (BankAccount account : accounts.values()) {
@@ -69,7 +68,6 @@ public class AccountManager {
         return filteredAccounts;
     }
 
-    // New method to filter by balance range
     public List<BankAccount> filterByBalanceRange(double minBalance, double maxBalance) {
         List<BankAccount> filteredAccounts = new ArrayList<>();
         for (BankAccount account : accounts.values()) {
